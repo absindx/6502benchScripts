@@ -1,0 +1,14 @@
+Thumbs.db
+*.exe
+*.dll
+*.old
+*.bak
+*.cache
+*.log
+*.txt
+*.lnk
+*.code-workspace
+
+*.nes
+*.bin
+*.zip

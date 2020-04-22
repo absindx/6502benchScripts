@@ -10,7 +10,7 @@
 
 ## [VisNesTile](Extension%20Scripts/NES/VisNesTile.cs)  
 
-![VisNesTile](Images/VisNesTile.png)  
+![VisNesTileArray](Images/VisNesTileArray.png)  
 
 ## License  
 

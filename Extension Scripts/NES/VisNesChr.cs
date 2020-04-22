@@ -39,7 +39,7 @@ namespace RuntimeData.Nintendo{
 		private byte[]		mFileData;
 
 		// Visualization identifiers; DO NOT change or projects that use them will break.
-		private const string	VIS_GEN_BITMAP	= "chr-bitmap";
+		private const string	VIS_GEN_BITMAP	= "nes-chr";
 
 		private const string	P_OFFSET	= "offset";
 		private const string	P_WIDTH		= "width";
@@ -61,7 +61,7 @@ namespace RuntimeData.Nintendo{
 
 		// Visualization descriptors.
 		private VisDescr[]	mDescriptors	= new VisDescr[]{
-			new VisDescr(VIS_GEN_BITMAP, "CHR Bitmap", VisDescr.VisType.Bitmap,
+			new VisDescr(VIS_GEN_BITMAP, "NES CHR", VisDescr.VisType.Bitmap,
 				new VisParamDescr[]{
 					new VisParamDescr("File offset (hex)",	P_OFFSET,	typeof(int),  0, 0x00FFFFFF, VisParamDescr.SpecialMode.Offset, 0),
 					new VisParamDescr("Width tile",		P_WIDTH,	typeof(int),  1, 512, 0, 16),

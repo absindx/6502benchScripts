@@ -1,5 +1,5 @@
 ﻿//--------------------------------------------------
-// 6502bench NES Tile Visualizer
+// 6502bench NES Tile Array Visualizer
 //   Created based on RuntimeData/... visualizer.
 //   Follow the original license. (Apache 2.0)
 //   Copyright 2020 absindx
@@ -32,14 +32,14 @@ namespace RuntimeData.Nintendo{
 		// IPlugin
 		public string		Identifier{
 			get{
-				return "NES Tile Visualizer";
+				return "NES Tile Array Visualizer";
 			}
 		}
 		private IApplication	mAppRef;
 		private byte[]		mFileData;
 
 		// Visualization identifiers; DO NOT change or projects that use them will break.
-		private const string	VIS_GEN_BITMAP	= "tile-bitmap";
+		private const string	VIS_GEN_BITMAP	= "nes-tile-array";
 
 		private const string	P_TILEOFFSET	= "tileoffset";
 		private const string	P_WIDTH		= "width";
@@ -103,7 +103,7 @@ namespace RuntimeData.Nintendo{
 
 			// Visualization descriptors.
 			return new VisDescr[]{
-				new VisDescr(VIS_GEN_BITMAP, "Tile Bitmap", VisDescr.VisType.Bitmap,
+				new VisDescr(VIS_GEN_BITMAP, "NES Tile Array", VisDescr.VisType.Bitmap,
 					new VisParamDescr[]{
 						new VisParamDescr("Tile array file offset (hex)",	P_TILEOFFSET,	typeof(int),  0, 0x00FFFFFF, VisParamDescr.SpecialMode.Offset, 0),
 						new VisParamDescr("Width tile",				P_WIDTH,	typeof(int),  1, 512, 0, 16),

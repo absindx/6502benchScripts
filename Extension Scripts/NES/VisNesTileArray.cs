@@ -45,6 +45,7 @@ namespace RuntimeData.Nintendo{
 		private const string	P_WIDTH		= "width";
 		private const string	P_HEIGHT	= "height";
 		private const string	P_CHROFFSET	= "chroffset";
+		private const string	P_CHIPOFFSET	= "chipoffset";
 		private const string	P_CHRBANK1	= "cgrbank1";
 		private const string	P_CHRBANK2	= "cgrbank2";
 		private const string	P_CHRBANK3	= "cgrbank3";
@@ -109,6 +110,7 @@ namespace RuntimeData.Nintendo{
 						new VisParamDescr("Width tile",				P_WIDTH,	typeof(int),  1, 512, 0, 16),
 						new VisParamDescr("Height tile",			P_HEIGHT,	typeof(int),  1, 512, 0, 16),
 						new VisParamDescr("CHR area file offset (hex)",		P_CHROFFSET,	typeof(int),  0, 0x00FFFFFF, VisParamDescr.SpecialMode.Offset, chrOffset),
+						new VisParamDescr("CHR chip offset",			P_CHIPOFFSET,	typeof(int),  -255, 255, 0, 0),
 						new VisParamDescr("CHR bank 1 ($0000-$03FF)",		P_CHRBANK1,	typeof(int),  0, 512, 0, 0),
 						new VisParamDescr("CHR bank 2 ($0400-$07FF)",		P_CHRBANK2,	typeof(int),  0, 512, 0, 1),
 						new VisParamDescr("CHR bank 3 ($0800-$0BFF)",		P_CHRBANK3,	typeof(int),  0, 512, 0, 2),
@@ -139,6 +141,7 @@ namespace RuntimeData.Nintendo{
 			int	width		= Util.GetFromObjDict(parms, P_WIDTH,		1);
 			int	height		= Util.GetFromObjDict(parms, P_HEIGHT,		1);
 			int	chroffset	= Util.GetFromObjDict(parms, P_CHROFFSET,	0);
+			int	chipoffset	= Util.GetFromObjDict(parms, P_CHIPOFFSET,	0);
 			int	chrbank1	= Util.GetFromObjDict(parms, P_CHRBANK1,	0);
 			int	chrbank2	= Util.GetFromObjDict(parms, P_CHRBANK2,	1);
 			int	chrbank3	= Util.GetFromObjDict(parms, P_CHRBANK3,	2);
@@ -210,7 +213,7 @@ namespace RuntimeData.Nintendo{
 						// Vertical
 						address	= tileoffset + (col * height) + row;
 					}
-					byte	tile	= this.mFileData[address];
+					byte	tile	= (byte)(this.mFileData[address] + chipoffset);
 					this.GenerateTile(bitmap, mapper, (uint)row, (uint)col, tile);
 				}
 			}

@@ -16,6 +16,17 @@
 
 ![VisNintendoVramProcTile](Images/VisNintendoVramProcTile.png)  
 
+## Symbols  
+
+## [NES_MMC3.sym65](Symbols/NES/NES_MMC3.sym65)  
+
+## Utilities  
+
+## [MesenDebugBuild](Utilities/MesenDebugBuild.bat)  
+
+Generate .dbg file for source debug in [Mesen](https://github.com/SourMesen/Mesen).  
+Please also prepare [cc65](https://cc65.github.io/).  
+
 ## License  
 
 Apache 2.0.  

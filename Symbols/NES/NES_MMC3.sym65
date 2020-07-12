@@ -1,0 +1,14 @@
+; 6502bench MMC3 registers symbol
+
+*SYNOPSIS NES MMC3 registers
+*MULTI_MASK %0000000000000000 %1000000000000000 %0110000000000001
+
+; https://wiki.nesdev.com/w/index.php/MMC3
+MMC3_BankSelect		> $8000	;CPM- -RRR
+MMC3_BankNumber		> $8001	;DDDD DDDD
+MMC3_Mirroring		> $A000	;---- ---M (0: vertical, 1: horizontal)
+MMC3_RamProtect		> $A001	;RWXX ----
+MMC3_IrqLatch		> $C000	;DDDD DDDD
+MMC3_IrqReload		> $C001	;---- ----
+MMC3_IrqDisable		> $E000	;---- ----
+MMC3_IrqEnable		> $E001	;---- ----

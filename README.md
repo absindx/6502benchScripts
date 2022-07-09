@@ -20,7 +20,10 @@
 
 ### [NES-MMC3.sym65](Symbols/Nintendo/NES-MMC3.sym65)  
 
-### [SNES-SA-1.sym65](Symbols/Nintendo/SNES-SA-1.sym65)  
+### SNES-SA-1.sym65  
+
+Move to [official repositories](https://github.com/fadden/6502bench).  
+
 
 ## Utilities  
 
